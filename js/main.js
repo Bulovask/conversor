@@ -14,6 +14,7 @@ request.send();
 request.onload = function() {
 	const res = request.response;
 	units = res;
+	updateDisplay();
 }
 
 const $ = (e) => document.querySelector(e);
@@ -29,13 +30,7 @@ old = "null";
 
 function loop() {
 	requestAnimationFrame(loop);
-	//recarrega as unidades
-	if(old != category.value) {
-		txt = htmlunits(units[category.value]);
-		eUi.innerHTML = txt;
-		eUf.innerHTML = txt;
-		old = category.value;
-	}
+	updateDisplay()
 	
 	//Atualiza o valor e o display
 	const vi = eVi.value;
@@ -54,4 +49,14 @@ function htmlunits(obj) {
 		text += `<option value="${obj[li[i]][1]}">${li[i]} (${obj[li[i]][0]})</option>`;
 	}
 	return text;
+}
+
+function updateDisplay() {
+	//recarrega as unidades
+	if(old != category.value) {
+		txt = htmlunits(units[category.value]);
+		eUi.innerHTML = txt;
+		eUf.innerHTML = txt;
+		old = category.value;
+	}
 }
