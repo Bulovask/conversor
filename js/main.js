@@ -30,8 +30,10 @@ old = "null";
 
 function loop() {
 	requestAnimationFrame(loop);
-	updateDisplay()
 	
+	if(old != category.value) {
+		updateDisplay()
+	}
 	//Atualiza o valor e o display
 	const vi = eVi.value;
 	const ui = eUi.value || 1;
@@ -53,10 +55,8 @@ function htmlunits(obj) {
 
 function updateDisplay() {
 	//recarrega as unidades
-	if(old != category.value) {
-		txt = htmlunits(units[category.value]);
-		eUi.innerHTML = txt;
-		eUf.innerHTML = txt;
-		old = category.value;
-	}
+	txt = htmlunits(units[category.value]);
+	eUi.innerHTML = txt;
+	eUf.innerHTML = txt;
+	old = category.value;
 }
