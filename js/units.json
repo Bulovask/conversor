@@ -1,7 +1,11 @@
 {
   "compr" : {
     "milimetros" : [ "mm", 1000 ],
-    "centimetros" : [ "cm", 100 ],
-    "metros" : [ "m", 1 ]
+    "centimetros": ["cm", 100],
+    "decimetros" : [ "dm", 10 ],
+    "metros" : [ "m", 1 ],
+    "decâmetros": ["dam", 0.1],
+    "hectômetros": ["hm", 0.01],
+    "quilômetros": ["km", 0.001]
   }
 }

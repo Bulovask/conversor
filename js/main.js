@@ -13,8 +13,7 @@ request.send();
 
 request.onload = function() {
 	const res = request.response;
-	alert(res)
-	units = {}
+	units = res;
 }
 
 const $ = (e) => document.querySelector(e);
