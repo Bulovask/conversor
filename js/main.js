@@ -5,7 +5,7 @@ let units = {
 	}
 }
 
-const requestUrl = "https://github.com/Bulovask/conversor/blob/master/js/units.json";
+const requestUrl = "https://bulovask.github.io/js/units.json";
 const request = new XMLHttpRequest();
 request.open("GET", requestUrl);
 request.responseType = "json";
