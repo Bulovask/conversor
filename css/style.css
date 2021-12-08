@@ -1,0 +1,45 @@
+:root {
+	--cor1: #fed;
+	--cor2: #def;
+	--cor3: #dec;
+	--altura: 4rem;
+}
+
+#category, #ui, #uf, #vi, #vf {
+	border: 1px solid black;
+	border-radius: 5px;
+}
+
+#category {
+	width: 100%;
+	height: var(--altura);
+	margin-bottom: 1px;
+	background-color: var(--cor1);
+	text-align: center;
+}
+
+#interface > div {
+	display: flex;
+	width: 100%;
+	height: var(--altura);
+	margin-bottom: 1px;
+}
+
+#ui, #uf {
+	display: inline-block;
+	padding: 0;
+	margin: 0;
+	background-color: var(--cor1);
+}
+
+#vi, #vf {
+	display: inline-block;
+	padding: 2px;
+	margin: 1px;
+	background-color: var(--cor2);
+	flex-grow: 1;
+}
+
+#vf {
+	background-color: var(--cor3);
+}

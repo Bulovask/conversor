@@ -1,0 +1,7 @@
+{
+  "compr" : {
+    "milimetros" : [ "mm", 1000 ],
+    "centimetros" : [ "cm", 100 ],
+    "metros" : [ "m", 1 ]
+  }
+}
