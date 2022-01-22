@@ -5,7 +5,7 @@ let units = {
 	}
 }
 
-const requestUrl = "https://bulovask.github.io/conversor/js/units.json";
+const requestUrl = "js/units.json";
 const request = new XMLHttpRequest();
 request.open("GET", requestUrl);
 request.responseType = "json";
@@ -27,7 +27,7 @@ const eUi = $("#ui");
 const eUf = $("#uf");
 
 old = "null";
-
+t=0
 function loop() {
 	requestAnimationFrame(loop);
 	
@@ -36,10 +36,22 @@ function loop() {
 	}
 	//Atualiza o valor e o display
 	const vi = eVi.value;
-	const ui = eUi.value || 1;
-	const uf = eUf.value || 1;
+	let ui = eUi.value;
+	let uf = eUf.value;
 	
-	eVf.innerText = vi / ui * uf;
+	if(category.value == 'compr') {
+		ui = (ui == 0 ? 1 : ui);
+		uf = (uf == 0 ? 1 : uf);
+		eVf.innerText = vi / ui * uf;
+	}
+	else if(category.value) {
+		ui = ui.split(',');
+		uf = uf.split(',');
+		eVf.innerText = (uf[1]-uf[0]) * (vi-ui[0]) / (ui[1]-ui[0]) + Number(uf[0]);
+	}
+	else {
+		eVf.innerText = 'Erro';
+	}
 }
 
 loop()

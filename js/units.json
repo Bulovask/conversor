@@ -7,5 +7,10 @@
     "decâmetros": ["dam", 0.1],
     "hectômetros": ["hm", 0.01],
     "quilômetros": ["km", 0.001]
+  },
+  "tempe" : {
+  	"Celcius": ["ºC", [0, 100]],
+  	"Fahrenheit": ["ºF", [32, 212]],
+  	"Kelvin": ["K", [273, 373]]
   }
 }
